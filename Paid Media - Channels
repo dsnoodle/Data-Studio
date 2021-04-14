@@ -1,0 +1,35 @@
+## Field ID calc_bh941xvkhc ##
+
+
+CASE
+
+WHEN (REGEXP_MATCH(Source,  ".*(affiliate_ss).*"))
+	OR (REGEXP_MATCH(Medium, ".*(landing_page).*"))
+	THEN "Test"
+
+WHEN (REGEXP_MATCH(Medium,  ".*(affiliate).*")) 
+	AND (REGEXP_MATCH(Medium, ".*(noodle).*"))
+	THEN "Internal Web Properties"
+
+WHEN (REGEXP_MATCH(Medium,  ".*(affiliate).*")) THEN "Affiliate"
+
+WHEN (Medium="paid_search") THEN "Paid Search"
+
+WHEN (Medium="paid_display") THEN "Paid Display"
+
+WHEN (Medium="paid_social") THEN "Paid Social"
+
+WHEN (Medium="paid_email") THEN "Paid Email"
+
+WHEN (Medium="owned_email") THEN "Owned Email"
+
+WHEN (Medium="organic") THEN "Organic"
+
+WHEN (Medium="referral") THEN "Referral"
+
+WHEN (REGEXP_MATCH(Medium,  ".*(none).*"))
+	OR (REGEXP_MATCH(Medium,  ".*(cpc).*")) THEN "Direct/Untagged"
+
+ELSE "Other"
+
+END
