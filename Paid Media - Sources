@@ -1,0 +1,22 @@
+## Field ID calc_02d416ulhc ##
+
+
+CASE
+
+WHEN (REGEXP_MATCH(Source,  ".*(noodle).*")) THEN "Noodle"
+
+WHEN (REGEXP_MATCH(Source,  ".*(facebook).*")) THEN "Facebook"
+
+WHEN (REGEXP_MATCH(Source,  ".*(linkedin).*")) THEN "LinkedIn"
+
+WHEN (REGEXP_MATCH(Source,  ".*(google).*")) THEN "Google"
+
+WHEN (REGEXP_MATCH(Source,  ".*(higher_ed_prospect).*")) THEN "Higher Education"
+
+WHEN (REGEXP_MATCH(Source,  ".*(list_leads).*")) THEN "Owned Email List"
+
+WHEN (REGEXP_MATCH(Source,  ".*(direct).*")) THEN "Direct/Untagged"
+
+ELSE "Other"
+
+END
