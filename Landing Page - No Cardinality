@@ -1,0 +1,4 @@
+##Field ID calc_iribtavlhc ##
+
+
+REGEXP_EXTRACT(Landing Page, "^([\\w-/\\.]+)\\??")
