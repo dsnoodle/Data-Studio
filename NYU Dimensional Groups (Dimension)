@@ -1,0 +1,10 @@
+## Field ID calc_yawfnujhhc ##
+
+
+CASE Dimensional Groups (Field)
+WHEN 'Device Category' THEN Device Category
+WHEN 'Default Channel Grouping' THEN Default Channel Grouping
+WHEN 'Landing Page Type' THEN Landing Page Type Groupings
+WHEN 'Region' THEN Region
+ELSE "Other"
+END 
