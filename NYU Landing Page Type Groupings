@@ -1,0 +1,135 @@
+##Field ID calc_ayfrjjihhc ##
+
+CASE
+
+WHEN (Landing Pages - No Cardinality="/")
+	OR (Landing Pages - No Cardinality="/home/")
+	OR (Landing Pages - No Cardinality="/home-2/")
+	OR (Landing Pages - No Cardinality="/homepage/")
+	THEN "Home"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/404).*")) THEN "404 Error"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/opt-out/).*")) THEN "Email Opt Out"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/blog/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/tag/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/category/).*"))
+	THEN "Blog"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/mission-statement/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/privacy-policy).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/site-map/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/contact-us).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/request-info).*"))
+	THEN "About / Contact Us"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/admission/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/admission-).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/application-).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/partners/).*"))
+    OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/process/).*"))
+    OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/process-2).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/professional-licensure/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/prospective-students/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/apply/).*"))
+	THEN "Application Process"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/residency/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/residency-options/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/albany/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/danbury/).*"))
+    OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/nyc/).*"))
+    OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/san-francisco/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/syracuse/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/washington-dc/).*"))
+	THEN "Residency Options"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/locations/).*")) THEN "Admissions: Locations"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/resident-directory/).*")) THEN "Resident Directory"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/staff-directory/).*")) THEN "Staff Directory"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/summit).*")) THEN "Summit"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/thank-you-info).*")) THEN "Thank You Confirmation: Info Session"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/thank-you).*")) THEN "Thank You Confirmation"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/costs/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/program-experience/costs/).*"))
+	THEN "Residency Experience: Costs"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/curriculum/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/modules/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/program-experience/curriculum/).*"))	
+	THEN "Residency Experience: Curriculum"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/residency/faculty/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/faculty/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/program-experience/faculty/).*"))	
+	THEN "Residency Experience: Faculty"
+	
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/program-experience/locations/).*")) THEN "Residency Experience: Locations"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/experience/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/program-experience/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/program-overview/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/announcements/).*"))
+	THEN "Residency Experience"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/eligibility/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/faq/).*"))
+	THEN "FAQs"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/idealist/).*"))
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/indeed/).*"))
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/albany-residency-experience/).*"))
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/become-a-math-teacher/).*"))
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/become-a-science-teacher/).*"))
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/become-a-special-education-teacher/).*"))
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/become-a-teacher/).*"))	
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/become-a-teacher-danbury).*"))	
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/become-a-teacher-math-and-science).*"))	
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/become-a-teacher-nyc/).*"))	
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/become-a-teacher-palm-beach/).*"))	
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/become-a-teacher-san-francisco/).*"))	
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/campus/).*"))	
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/campus-recruitment/).*"))	
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/residency-experience/).*"))
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/nyc-residency-experience/).*"))
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/nyu-teacher-residency-inclusive-childhood-education/).*"))
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/quick-start/).*"))
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/san-francisco-site-visit/).*"))
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/sdpbc-partner-page/).*"))
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/danbury-launch-event/).*"))
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/sdp-partner-page/).*"))	
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/sf-residency-experience/).*"))	
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/sfusdpartnerpage/).*"))	
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/tfa/).*"))	
+	OR(REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/washington-dc-launch-event/).*"))		
+	THEN "Landing Page"
+
+WHEN (Landing Pages - No Cardinality="/cohort/2020-2021/")
+	OR (Landing Pages - No Cardinality="/covid-19/")
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/elementor).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/hc-form).*"))
+    OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/hc-widget).*"))
+    OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/iframe).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/kitchen-sink).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/learn-more-popup).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/mentor-resources/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/nyu-steinhardt-teacher-residency-mentor-resources/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/partnership-resources).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/regional-landing-page-content).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/rfi-include).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/subject-area/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/landing-page-mother).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/emat).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/error).*"))		
+	THEN "Exclude"
+
+ELSE "Blog"
+
+END
