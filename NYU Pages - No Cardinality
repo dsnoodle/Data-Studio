@@ -1,0 +1,4 @@
+## Field ID calc_nopch33ghc ##
+
+
+REGEXP_EXTRACT(Page, "^([\\w-/\\.]+)\\??")
