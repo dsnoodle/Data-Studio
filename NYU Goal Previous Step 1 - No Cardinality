@@ -1,0 +1,4 @@
+## Field ID calc_3r9s94ihhc ##
+
+
+REGEXP_EXTRACT(Goal Previous Step - 1, "^([\\w-/\\.]+)\\??")
