@@ -1,0 +1,135 @@
+## Field ID calc_7gmge5ihhc ##
+
+CASE
+
+WHEN (Goal Previous Step 1 - No Cardinality="/")
+	OR (Goal Previous Step 1 - No Cardinality="/home/")
+	OR (Goal Previous Step 1 - No Cardinality="/home-2/")
+	OR (Goal Previous Step 1 - No Cardinality="/homepage/")
+	THEN "Home"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/404).*")) THEN "404 Error"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/opt-out/).*")) THEN "Email Opt Out"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/blog/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/tag/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/category/).*"))
+	THEN "Blog"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/mission-statement/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/privacy-policy).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/site-map/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/contact-us).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/request-info).*"))
+	THEN "About / Contact Us"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/admission/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/admission-).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/application-).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/partners/).*"))
+    OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/process/).*"))
+    OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/process-2).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/professional-licensure/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/prospective-students/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/apply/).*"))
+	THEN "Application Process"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/residency/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/residency-options/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/albany/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/danbury/).*"))
+    OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/nyc/).*"))
+    OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/san-francisco/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/syracuse/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/washington-dc/).*"))
+	THEN "Residency Options"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/locations/).*")) THEN "Admissions: Locations"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/resident-directory/).*")) THEN "Resident Directory"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/staff-directory/).*")) THEN "Staff Directory"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/summit).*")) THEN "Summit"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/thank-you-info).*")) THEN "Thank You Confirmation: Info Session"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/thank-you).*")) THEN "Thank You Confirmation"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/costs/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/program-experience/costs/).*"))
+	THEN "Residency Experience: Costs"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/curriculum/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/modules/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/program-experience/curriculum/).*"))	
+	THEN "Residency Experience: Costs"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/residency/faculty/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/faculty/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/program-experience/faculty/).*"))	
+	THEN "Residency Experience: Costs"
+	
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/program-experience/locations/).*")) THEN "Residency Experience: Locations"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/experience/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/program-experience/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/program-overview/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/announcements/).*"))
+	THEN "Residency Experience"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/eligibility/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/faq/).*"))
+	THEN "FAQs"
+
+WHEN (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/idealist/).*"))
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/indeed/).*"))
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/albany-residency-experience/).*"))
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/become-a-math-teacher/).*"))
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/become-a-science-teacher/).*"))
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/become-a-special-education-teacher/).*"))
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/become-a-teacher/).*"))	
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/become-a-teacher-danbury).*"))	
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/become-a-teacher-math-and-science).*"))	
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/become-a-teacher-nyc/).*"))	
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/become-a-teacher-palm-beach/).*"))	
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/become-a-teacher-san-francisco/).*"))	
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/campus/).*"))	
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/campus-recruitment/).*"))	
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/residency-experience/).*"))
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/nyc-residency-experience/).*"))
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/nyu-teacher-residency-inclusive-childhood-education/).*"))
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/quick-start/).*"))
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/san-francisco-site-visit/).*"))
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/sdpbc-partner-page/).*"))
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/danbury-launch-event/).*"))
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/sdp-partner-page/).*"))	
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/sf-residency-experience/).*"))	
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/sfusdpartnerpage/).*"))	
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/tfa/).*"))	
+	OR(REGEXP_MATCH(Goal Previous Step 1 - No Cardinality,  ".*(/washington-dc-launch-event/).*"))		
+	THEN "Landing Page"
+
+WHEN (Goal Previous Step 1 - No Cardinality="/cohort/2020-2021/")
+	OR (Goal Previous Step 1 - No Cardinality="/covid-19/")
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/elementor).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/hc-form).*"))
+    OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/hc-widget).*"))
+    OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/iframe).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/kitchen-sink).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/learn-more-popup).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/mentor-resources/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/nyu-steinhardt-teacher-residency-mentor-resources/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/partnership-resources).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/regional-landing-page-content).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/rfi-include).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/subject-area/).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/landing-page-mother).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/emat).*"))
+	OR (REGEXP_MATCH(Goal Previous Step 1 - No Cardinality, ".*(/error).*"))		
+	THEN "Exclude"
+
+ELSE "Blog"
+
+END
