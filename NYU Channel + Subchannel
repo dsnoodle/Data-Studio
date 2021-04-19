@@ -1,0 +1,55 @@
+## Field ID calc_yr5ihjkhhc ##
+
+
+CASE
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(source=indeed).*"))
+	THEN "Job Boards - Indeed"
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(source=handshake).*"))
+	THEN "Job Boards - Handshake"
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(source=idealist).*"))
+	THEN "Job Boards - Idealist"    
+
+WHEN (REGEXP_MATCH(Landing Page ,  ".*(source=email-tfa).*"))
+	THEN "TFA List"
+
+WHEN (REGEXP_MATCH(Landing Page ,  ".*(source=campusrecruitment).*"))
+	THEN "Campus Recruitment"
+    
+WHEN (REGEXP_MATCH(Landing Page ,  ".*(source=classifieds-ziprecruiter).*"))
+	THEN "Job Boards - Zip Recruiter"
+
+WHEN (REGEXP_MATCH(Landing Page ,  ".*(source=social-facebook).*"))
+	OR (REGEXP_MATCH(Landing Page, ".*(source=social-instagram).*"))
+	THEN "Paid Social - Facebook"
+
+WHEN (REGEXP_MATCH(Landing Page ,  ".*(become-a-teacher).*"))
+	AND (REGEXP_MATCH(Source, ".*(facebook).*"))
+	THEN "Paid Social - Facebook"
+    
+WHEN (REGEXP_MATCH(Landing Page ,  ".*(become-a-teacher).*"))
+	AND (REGEXP_MATCH(Source, ".*(instagram).*"))
+	THEN "Paid Social - Facebook"    
+
+WHEN (REGEXP_MATCH(Landing Page ,  ".*(source=social-linkedin).*"))
+	THEN "Paid Social - LinkedIn"
+    
+WHEN (REGEXP_MATCH(Landing Page ,  ".*(become-a-teacher).*"))
+	AND (REGEXP_MATCH(Source, ".*(linkedin).*"))
+	THEN "Paid Social - LinkedIn"    
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(source=google).*"))
+	THEN "Paid Search/Display - Google"
+    
+WHEN (REGEXP_MATCH(Landing Page ,  ".*(become-a-teacher).*"))
+	AND (REGEXP_MATCH(Source, ".*(google).*"))
+	THEN "Paid Search/Display - Google" 
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(email:).*"))
+	THEN "CRM Email"
+
+ELSE (Default Channel Grouping)
+
+END
