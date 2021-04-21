@@ -1,0 +1,15 @@
+## Field ID calc_memkuy5yic ##
+
+
+CASE
+
+WHEN (REGEXP_MATCH(Device Category,  ".*(desktop).*"))
+	OR (REGEXP_MATCH(Device Category, ".*(tablet).*"))
+	THEN "Desktop + Tablet"
+
+WHEN (REGEXP_MATCH(Device Category,  ".*(mobile).*")) 
+	THEN "Mobile"
+    
+ELSE "Other"
+
+END
