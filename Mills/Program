@@ -1,0 +1,12 @@
+CASE
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(education).*"))
+OR (REGEXP_MATCH(Landing Page,  ".*(educational).*"))
+OR (REGEXP_MATCH(Landing Page,  ".*(teachers).*"))
+OR (REGEXP_MATCH(Landing Page,  ".*(principal).*"))
+OR (REGEXP_MATCH(Landing Page,  ".*(leadership).*"))
+    THEN "MEd"
+    
+ELSE "Other"
+
+END
