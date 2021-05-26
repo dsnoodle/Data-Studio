@@ -1,0 +1,26 @@
+CASE
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(thank-you).*")) THEN "Thank You Confirmation"
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(/about/).*")) THEN "About + Student Resources"
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(/legal/).*")) 
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(admissions-and-aid).*"))
+    OR (REGEXP_MATCH(Pages - No Cardinality, ".*(online-events).*"))
+    OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/request-info).*"))
+    OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/info).*"))
+	THEN "Admissions"
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(/blog/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/categories/).*"))
+    THEN "Blog"
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(/masters-in-nursing-leadership-analytics-and-innovation/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/student-experience).*"))
+	THEN "Academic Program Page"
+
+WHEN (Pages - No Cardinality="/") THEN "Home"
+
+ELSE "Misc"
+
+END
