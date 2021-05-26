@@ -1,0 +1,8 @@
+CASE
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(master-public-health).*"))
+    THEN "MPH"
+
+ELSE "Other"
+
+END
