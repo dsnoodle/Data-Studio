@@ -1,0 +1,11 @@
+CASE
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(discovery).*"))
+	OR (REGEXP_MATCH(Landing Page,  ".*(strength).*"))
+    OR (REGEXP_MATCH(Landing Page,  ".*(data-science).*"))
+    OR (REGEXP_MATCH(Landing Page,  ".*(hands).*"))
+    THEN "MS Data Science"
+
+ELSE "Other"
+
+END
