@@ -1,0 +1,14 @@
+CASE
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(master-library-information).*"))
+    THEN "MLIS"
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(/master-information-management).*"))
+    THEN "MSIM - OG"
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(online-master-information-management).*"))
+    THEN "MSIM - Online"
+    
+ELSE "Other"
+
+END
