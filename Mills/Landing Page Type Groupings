@@ -1,0 +1,47 @@
+CASE
+
+WHEN (Landing Page - No Cardinality="/")
+	THEN "Home"
+
+WHEN (REGEXP_MATCH(Landing Page - No Cardinality,  ".*(/404).*")) THEN "404 Error"
+
+WHEN (REGEXP_MATCH(Landing Page - No Cardinality,  ".*(/opt-out).*")) THEN "Email Opt Out"
+
+WHEN (REGEXP_MATCH(Landing Page - No Cardinality,  ".*(thank-you).*")) THEN "Thank You Confirmation"
+
+WHEN (REGEXP_MATCH(Landing Page - No Cardinality,  ".*(/blog/).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/tag/).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/category/).*"))
+	THEN "Blog"
+
+WHEN (REGEXP_MATCH(Landing Page - No Cardinality,  ".*(/applynow).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/cost-and-financial-aid).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/career-services).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/events).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/faq).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/how-to-apply).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/schedule-an-appointment).*"))	
+	THEN "Admissions"
+    
+WHEN (REGEXP_MATCH(Landing Page - No Cardinality,  ".*(/legal).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/privacy-policy).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/site-map).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/contact-us).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/request-info).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/about).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/why-mills-online).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/alumnae).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/faculty).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/leadership-and-faculty).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/student-support).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/online-learning-environment).*"))	
+	THEN "About + Student Resources"
+    
+
+WHEN (REGEXP_MATCH(Landing Page - No Cardinality,  ".*(/online-masters-ed-leadership).*"))
+	OR (REGEXP_MATCH(Landing Page - No Cardinality, ".*(/online-masters-in-educational-leadership).*"))
+	THEN "Academic Program Pages"
+
+ELSE "Misc"
+
+END
