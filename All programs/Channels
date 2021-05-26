@@ -15,9 +15,9 @@ WHEN (REGEXP_MATCH(Medium,  ".*(affiliate).*")) THEN "Affiliate"
 
 WHEN (Medium="paid_search") THEN "Paid Search"
 
-WHEN (Medium="paid_display") THEN "Paid Display"
-
 WHEN (Medium="paid_social") THEN "Paid Social"
+
+WHEN (Medium="paid_display") THEN "Paid Display"
 
 WHEN (Medium="paid_email") THEN "Paid Email"
 
