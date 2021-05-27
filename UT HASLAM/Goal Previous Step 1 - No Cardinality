@@ -1,0 +1,1 @@
+REGEXP_EXTRACT(Goal Previous Step - 1, "^([\\w-/\\.]+)\\??")
