@@ -1,0 +1,46 @@
+CASE
+
+WHEN (Pages - No Cardinality="/")
+	THEN "Home"
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(/404).*")) THEN "404 Error"
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(/opt-out).*")) THEN "Email Opt Out"
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(thank-you).*")) THEN "Thank You Confirmation"
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(/blog/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/tag/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/category/).*"))
+	THEN "Blog"
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(/legal/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/privacy-policy).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/site-map/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/terms-of-use/).*"))	
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/news/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/request-info).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/about/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/why/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/student-experience/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/student-support/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/online-learning/).*"))	
+	THEN "About + Student Resources"
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(/admissions/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/tuition-and-financial-aid).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/career-outlook/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/events/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/faq/).*"))
+	THEN "Admissions"
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(/online-computer-science).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/online-masters-in-computer-science).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/online-masters-in-data-science).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/online-post-baccalaureate-in-computer-science).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/post-baccalaureate-in-computer-science).*"))	
+	THEN "Academic Program Pages"
+
+ELSE "Misc"
+
+END
