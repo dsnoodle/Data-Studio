@@ -1,0 +1,41 @@
+CASE
+
+WHEN (Landing Pages - No Cardinality="/")
+	THEN "Home"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/404).*")) THEN "404 Error"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/opt-out).*")) THEN "Email Opt Out"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/thank-you).*")) THEN "Thank You Confirmation"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/blog/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/tag/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/category/).*"))
+	THEN "Blog"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/legal/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/privacy-policy).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/site-map/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/contact-us).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/request-info).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/about/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/faq/).*"))
+	THEN "About + Student Resources"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/admissions/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/tuition-and-financial-aid).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/events/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/online-student-experience/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/about/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/career-advancement/).*"))
+	THEN "Admissions"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/occupational-therapy/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/online-masters-network-engineering/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/online-masters-computer-science-artificial-intelligence/).*")) 
+	THEN "Academic Program Pages"
+
+ELSE "Misc"
+
+END
