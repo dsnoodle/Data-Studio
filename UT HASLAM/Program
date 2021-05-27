@@ -1,0 +1,11 @@
+CASE
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(mba).*"))
+    THEN "EMBA"
+    
+WHEN (REGEXP_MATCH(Landing Page,  ".*(masters-supply-chain).*"))
+    THEN "MSCSM"
+
+ELSE "Other"
+
+END
