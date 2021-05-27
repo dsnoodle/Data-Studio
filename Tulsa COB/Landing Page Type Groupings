@@ -1,0 +1,46 @@
+CASE
+
+WHEN (Landing Pages - No Cardinality="/")
+	THEN "Home"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/404).*")) THEN "404 Error"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/opt-out).*")) THEN "Email Opt Out"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/thank-you).*")) THEN "Thank You Confirmation"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/blog/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/tag/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/category/).*"))
+	THEN "Blog"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/legal/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/privacy-policy).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/site-map/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/contact-us).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/request-info).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/about/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/degree-value/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/faculty/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/news/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/why-tulsa/).*"))	
+	THEN "About + Student Resources"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/admissions/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/financial-aid).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/online-experience/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/past-events/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/register/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/student-experience/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/student-resources/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/upcoming-events/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/veterans/).*"))
+	OR (REGEXP_MATCH(Landing Pages - No Cardinality, ".*(/apply/).*"))	
+	THEN "Admissions"
+
+WHEN (REGEXP_MATCH(Landing Pages - No Cardinality,  ".*(/curriculum/).*"))
+	THEN "Academic Program Pages"
+
+ELSE "Misc"
+
+END
