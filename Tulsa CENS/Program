@@ -1,0 +1,8 @@
+CASE
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(cybersecurity).*"))
+    THEN "MS Cyber Security"
+
+ELSE "Other"
+
+END
