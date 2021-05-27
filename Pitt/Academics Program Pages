@@ -1,0 +1,14 @@
+CASE
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(physician-assistant-studies).*"))
+    THEN "Physician Assistant Studies Hybrid"
+    
+WHEN (REGEXP_MATCH(Landing Page,  ".*(online-masters-in-health-informatics).*"))
+    THEN "Masters of Science in Health Informatics"
+    
+WHEN (REGEXP_MATCH(Landing Page,  ".*(occupational-therapy).*"))
+    THEN "Doctor of Clinical Science in Occupational Therapy"
+    
+ELSE "Other"
+
+END
