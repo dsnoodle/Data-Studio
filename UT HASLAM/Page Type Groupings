@@ -1,0 +1,58 @@
+CASE
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(thank-you).*")) THEN "Thank You Confirmation"
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(/about/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/diversity-at-haslam).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/faculty/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/message-from-the-dean/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/press/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/welcome-letter/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/why-haslam/).*"))
+	THEN "About + Student Resources"
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(/legal/).*")) 
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/admissions).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/compare-our-programs).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/engage/).*"))
+	THEN "Admissions"
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(/blog/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/categories/).*"))
+    THEN "Blog"
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(/online-masters-computer-science).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/courses/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/curriculum/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/executive-mba-global-supply-chain/).*"))
+    OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/master-of-science-supply-chain-management/).*"))
+    OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/masters-supply-chain-management/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/ms-in-supply-chain-management-online/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/msscm/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/ms-scm/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/ms-supply-chain-management/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/ms-supply-chain-management-online/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/online-learning).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/online-masters-in-supply-chain-management-msscm/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/online-masters-supply-chain/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/supply-chain-management/).*"))
+	THEN "Academic Program Page"
+
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(/for-employers/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/forum/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/global-supply-chain-institute/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/gsci/).*"))
+    OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/industry/).*"))
+    OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/mary-c-holcomb-scholarship-endowment).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/ms-in-supply-chain-management-online/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/programs/).*"))
+	OR (REGEXP_MATCH(Pages - No Cardinality, ".*(/publications/).*"))
+	THEN "GSCI"
+	
+WHEN (REGEXP_MATCH(Pages - No Cardinality,  ".*(/research/).*")) THEN "GSCI - Research"
+
+WHEN (Pages - No Cardinality="/") THEN "Home"
+
+ELSE "Misc"
+
+END
