@@ -1,0 +1,8 @@
+CASE
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(online-mba).*"))
+    THEN "MBA"
+
+ELSE "Other"
+
+END
