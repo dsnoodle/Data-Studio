@@ -1,13 +1,25 @@
 CASE
 
-WHEN (REGEXP_MATCH(Landing Page,  ".*(data-science).*"))
+WHEN (REGEXP_MATCH(Landing Page,  ".*(data-science-msds).*"))
 	OR (REGEXP_MATCH(Landing Page, ".*(msds).*"))
     THEN "MS Data Science"
 
-WHEN (REGEXP_MATCH(Landing Page,  ".*(computer-science).*"))
+WHEN (REGEXP_MATCH(Landing Page,  ".*(computer-science-mscs).*"))
 	OR (REGEXP_MATCH(Landing Page, ".*(mscs).*"))
     THEN "MS Computer Science"
 
+WHEN (REGEXP_MATCH(Landing Page,  ".*(engineering-management-meem).*"))
+	OR (REGEXP_MATCH(Landing Page, ".*(meem).*"))
+    THEN "MEEM"
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(analytics-mba-amba).*"))
+	OR (REGEXP_MATCH(Landing Page, ".*(amba).*"))
+    THEN "AMBA"
+    
+WHEN (REGEXP_MATCH(Landing Page,  ".*(business-intelligence-analytics-msbia).*"))
+	OR (REGEXP_MATCH(Landing Page, ".*(msbia).*"))
+    THEN "MSBIA"
+    
 ELSE "Other"
 
 END
