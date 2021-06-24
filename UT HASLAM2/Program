@@ -1,0 +1,29 @@
+CASE
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(emba-hl).*"))
+OR (REGEXP_MATCH(Landing Page,  ".*(healthcare-leadership-emba).*"))
+OR (REGEXP_MATCH(Landing Page,  ".*(healthcare-leadership).*"))
+    THEN "Executive MBA - Healthcare Leadership"
+    
+WHEN (REGEXP_MATCH(Landing Page,  ".*(emba-sl).*"))
+OR (REGEXP_MATCH(Landing Page,  ".*(strategic-leadership-emba).*"))
+OR (REGEXP_MATCH(Landing Page,  ".*(strategic-leadership).*"))
+    THEN "Executive MBA - Strategic Leadership"
+    
+WHEN (REGEXP_MATCH(Landing Page,  ".*(ad-mba).*"))
+OR (REGEXP_MATCH(Landing Page,  ".*(admba).*"))
+OR (REGEXP_MATCH(Landing Page,  ".*(aerospace-defense).*"))
+    THEN "Aerospace and Defense MBA"   
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(phy-mba).*"))
+OR (REGEXP_MATCH(Landing Page,  ".*(pemba).*"))
+OR (REGEXP_MATCH(Landing Page,  ".*(physician-executive-pemba).*"))
+    THEN "Physician Executive MBA"
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(promba).*"))
+OR (REGEXP_MATCH(Landing Page,  ".*(professional-mba).*"))
+    THEN "Physician Executive MBA"
+
+ELSE "Other"
+
+END
