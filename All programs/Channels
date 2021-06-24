@@ -23,9 +23,21 @@ WHEN (Medium="paid_email") THEN "Paid Email"
 
 WHEN (Medium="owned_email") THEN "Owned Email"
 
+WHEN (Medium="crm_email") THEN "CRM Email"
+
 WHEN (Medium="organic") THEN "Organic"
 
 WHEN (Medium="referral") THEN "Referral"
+
+WHEN (Medium="partner_website") THEN "Partner Website"
+
+WHEN (Medium="internal_web_properties") THEN "Internal Web Properties"
+
+WHEN (Medium="strategic_partnerships") THEN "Strategic Partnerships"
+
+WHEN (Medium="newsletter") THEN "Newsletter(Print)"
+
+WHEN (Medium="school_partnerships") THEN "School Partnerships"
 
 WHEN (REGEXP_MATCH(Medium,  ".*(none).*"))
 	OR (REGEXP_MATCH(Medium,  ".*(cpc).*")) THEN "Direct/Untagged"
