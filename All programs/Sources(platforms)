@@ -10,7 +10,9 @@ WHEN (REGEXP_MATCH(Source,  ".*(linkedin).*")) THEN "LinkedIn"
 
 WHEN (REGEXP_MATCH(Source,  ".*(google).*")) THEN "Google"
 
-WHEN (REGEXP_MATCH(Source,  ".*(higher_ed_prospect).*")) THEN "Higher Education"
+WHEN (REGEXP_MATCH(Source,  ".*(higher_ed_prospect).*"))
+  OR (REGEXP_MATCH(Source,  ".*(highered).*"))
+  THEN "Higher Education"
 
 WHEN (REGEXP_MATCH(Source,  ".*(educationdynamics).*")) THEN "Education Dynamics"
 
@@ -18,13 +20,19 @@ WHEN (REGEXP_MATCH(Source,  ".*(xyzmedia).*")) THEN "XYZ Media"
 
 WHEN (REGEXP_MATCH(Source,  ".*(allstardirectories).*")) THEN "All Star Directories"
 
+WHEN (REGEXP_MATCH(Source,  ".*(digitalmarketingsolutions).*")) THEN "Digital Marketing Solutions"
+
+WHEN (REGEXP_MATCH(Source,  ".*(ventrix).*")) THEN "ventrix"
+
 WHEN (REGEXP_MATCH(Source,  ".*(sechel).*")) THEN "Sechel"
 
 WHEN (REGEXP_MATCH(Source,  ".*(centerfield).*")) THEN "Centerfield"
 
 WHEN (REGEXP_MATCH(Source,  ".*(relias).*")) THEN "Relias"
 
-WHEN (REGEXP_MATCH(Source,  ".*(path56).*")) THEN "Path 56 Media"
+WHEN (REGEXP_MATCH(Source,  ".*(path56).*")) 
+  OR (REGEXP_MATCH(Source,  ".*(path56media).*")) 
+  THEN "Path 56 Media"
 
 WHEN (REGEXP_MATCH(Source,  ".*(list_leads).*")) THEN "Owned Email List"
 
