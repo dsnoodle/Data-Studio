@@ -1,0 +1,14 @@
+CASE
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(online-mba).*"))
+    THEN "Online MBA"
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(master-strategic-communication).*"))
+    THEN "Master of Science in Strategic Communication online"
+
+WHEN (REGEXP_MATCH(Landing Page,  ".*(master-data-analytics).*"))
+    THEN "Master of Science in Data Analytics online"
+    
+ELSE "Other"
+
+END
